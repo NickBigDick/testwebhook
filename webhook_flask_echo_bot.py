@@ -3,7 +3,7 @@ import time
 import flask
 import telebot
 
-token = "5781580771:AAFe_HToFfz6QWgQVGJbj_YqTPCgwhmGPX8"
+token = "5903248557:AAHhobXBAQEFVsTpLDnaG5RNG52SYzQCzOU"
 
 WEBHOOK_HOST = "92.255.67.180"
 WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
