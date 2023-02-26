@@ -3,7 +3,8 @@ import telebot
 from telebot.types import Message
 from flask import Flask, request
 
-bot = telebot.TeleBot("5781580771:AAFe_HToFfz6QWgQVGJbj_YqTPCgwhmGPX8")
+token = "5781580771:AAFe_HToFfz6QWgQVGJbj_YqTPCgwhmGPX8"
+bot = telebot.TeleBot(token)
 server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
@@ -11,7 +12,7 @@ def start(message: Message):
     username = message.from_user.username
     bot.reply_to(message, f"Hello, {username}")
 
-@server.route(f"/", methods=["POST"])
+@server.route(f"/{token}", methods=["POST"])
 def redirect_message():
     json_string = request.get_data().decode("utf-8")
     update = telebot.types.Update.de_json(json_string)
@@ -21,6 +22,6 @@ def redirect_message():
 
 if __name__ == "__main__":
     bot.remove_webhook()
-    bot.set_webhook("https://92.255.67.180")
+    bot.set_webhook(f"https://92.255.67.180/{token}")
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
