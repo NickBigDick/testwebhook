@@ -35,6 +35,7 @@ app = flask.Flask(__name__)
 def index():
     return 'достучался'
 
+
 # Process webhook calls
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
