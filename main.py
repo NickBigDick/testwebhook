@@ -28,7 +28,5 @@ def redirect_message():
 
 if __name__ == "__main__":
     bot.remove_webhook()
-    bot.set_webhook(f"https://92.255.67.180/{token}")
-    server.run(host="92.255.67.180", port=int(os.environ.get("PORT", 5000)))
-
-
+    bot.set_webhook(url=f"https://192.168.0.2/{token}")
+    server.run(host="192.168.0.2", port=int(os.environ.get("PORT", 5000)))
