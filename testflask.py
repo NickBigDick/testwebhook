@@ -10,5 +10,5 @@ def hello_world():
 
 
 if __name__=="__main__":
-        app.run(host="192.168.0.2", port=80, debug=True)
+        app.run(host="192.168.0.2")
 
