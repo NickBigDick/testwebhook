@@ -33,7 +33,7 @@ app = flask.Flask(__name__)
 # Empty webserver index, return nothing, just http 200
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
-    return ''
+    return 'достучался'
 
 # Process webhook calls
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
@@ -64,7 +64,7 @@ def echo_message(message):
 # Remove webhook, it fails sometimes the set if there is a previous webhook
 bot.remove_webhook()
 
-time.sleep(0.1)
+time.sleep(1)
 
 # Set webhook
 bot.set_webhook(url=WEBHOOK_URL_BASE + WEBHOOK_URL_PATH,
